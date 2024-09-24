@@ -1,0 +1,132 @@
+/* body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
+}
+#todo_app{
+    text-align: center;
+    background-color: bisque;
+}
+#display{
+    
+    display: flex;
+    justify-items: center;
+    background-color: aquamarine;
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+}
+
+body {
+    background: linear-gradient(to bottom right, rgb(245, 200, 161),rgb(249, 165, 165));
+    font-family: 'Arial', sans-serif; /* Simple, readable font */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Padding around the content */
+}
+
+h1 {
+    color: #333; /* Dark text color for contrast */
+    margin-bottom: 20px; /* Spacing below the heading */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+}
+
+hr {
+    width: 100%; /* Full width for the horizontal line */
+    margin: 10px 0; /* Margin around the line */
+    border: 1px solid #ccc; /* Light grey line */
+}
+
+input[type="text"] {
+    width: 300px; /* Width of the input field */
+    height: 40px; /* Height of the input field */
+    padding: 5px; /* Padding inside the input */
+    border: 2px solid #619d21; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-right: 10px; /* Space between input and button */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+
+button {
+    height: 40px; /* Height of the button */
+    padding: 0 15px; /* Horizontal padding */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #efa557; /* Green background */
+    color: rgb(255, 255, 255); /* White text */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+    
+}
+
+button:hover {
+    background-color: #ec5d10; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+.todo-container {
+    margin-top: 20px; /* Spacing above the todo list */
+    width: 100%; /* Full width for the todo container */
+    max-width: 400px; /* Maximum width for the container */
+    background-color: #ffffff; /* White background for the todo box */
+    border: 2px solid #dfae5a; /* Green border for the todo box */
+    border-radius: 10px; /* Rounded corners for the box */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.todo-container div {
+    display: flex; /* Flexbox layout for todos */
+    justify-content: space-between; /* Space between items and buttons */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Padding around each todo item */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between todos */
+    background-color: #ffffff; /* White background for todo items */
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    opacity: 0; /* Start as invisible for fade-in effect */
+    transform: translateY(10px); /* Start slightly below */
+    animation: fadeIn 0.5s forwards; /* Animation for fading in */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+}
+
+.todo-container span {
+    font-size: 18px; /* Font size for todo text */
+    color: #333; /* Dark text color for contrast */
+    
+}
+
+.todo-container button {
+    background-color: #f44336; /* Red background for delete button */
+    transition: transform 0.1s; /* Transition for the shake effect */
+}
+
+.todo-container button:hover {
+    background-color: #e53935; /* Darker red on hover */
+    animation: shake 0.3s; /* Shake animation on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade to fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
